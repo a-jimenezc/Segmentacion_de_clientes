@@ -1,0 +1,16 @@
+El conjunto de datos proviene de Kaggle bajo el nombre de Customer Clustering, el cual fue subido por Dev Sharma. Este cuenta con 2000 observaciones. Los atributos son los siguientes
+
+ID Numérico. Entero que muestra una identificación única de un cliente.
+
+Sex (género biológico) Categórico {0,1}. En este conjunto de datos solo hay 2 opciones diferentes 0 = masculino, 1 = femenino.
+
+Marital Status (estado civil) Categórico {0,1}. Estado civil de un cliente. 0 = soltero, 1 = no soltero (divorciado  separado  casado  viudo).
+
+Age (edad) Numérico, Entero. La edad del cliente en años, calculada como el año actual menos el año de nacimiento del cliente en el momento de la creación del conjunto de datos. 18 es el valor mínimo (la edad más baja observada en el conjunto de datos). 76 es el valor máximo (la edad más alta observada en el conjunto de datos).
+
+Education (educación) Categórico {0,1,2,3}. Nivel de educación del cliente 0 = otro  desconocido, 1 = escuela secundaria, 2 = universidad, 3 = escuela de posgrado.
+Income (ingresos) Numérico, Real. Ingresos anuales autoreportados en dólares estadounidenses del cliente.
+
+Occupation (ocupación) Categórico {0,1,2}. Categoría de ocupación del cliente. 0 = desempleado  no calificado, 1 = empleado calificado  funcionario, 2 = gestión  autónomo  empleado altamente calificado  oficial.
+
+Settlement sieze (Tamaño del lugar de residencia) Categórico {0,1,2}. El tamaño de la ciudad en la que vive el cliente. 0 = ciudad pequeña, 1 = ciudad mediana, 2 = gran ciudad.
