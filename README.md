@@ -51,13 +51,11 @@ De la anterior gráfica, se escoje el algoritmo K-mean con K=4, cuatro grupos. S
 
 Se realiza una inspección visual de los resultados de este algoritmo.
 
-<p align="center">
 
 <img src="referencias/images/result3.png" alt="Alt text 1" width="300"/> 
 
 <img src="referencias/images/result1.png" alt="Alt text 1" width="300"/> <img src="referencias/images/result2.png" alt="Alt text 2" width="300"/>
   
-</p>
 
 
 ### Conclusiones
