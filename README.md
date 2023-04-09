@@ -22,7 +22,7 @@ El conjunto de datos se compone de variables numericas, ordinales y categoricas.
 
 También, se puede observar que existe correlación entre ciertas variables numéricas. 
 
-<img src="referencias/images/corr.png" alt="Alt text 1" width="200"/>
+<img src="referencias/images/corr.png" alt="Alt text 1" width="300"/>
 
 ### Construcción del modelo
 Tres algoritmos de agrupamiento distintos fueron implementados: K-means, HDBSCAN y Gaussian Mixture Model. En cada caso,  se determinaron los mejores hiper-parámetros. Se utilizó la biblioteca Scikit-learn para K-means y GMM, mientras que para el algoritmo HDBSCAN se utilizó la implementación provista por la biblioteca hdbscan.
