@@ -66,5 +66,5 @@ K-means es el modelo que mejor se desempeña con estos datos y con el requerimie
 
 jimenezc.bo@gmail.com  
 
-jimenezc.antn@gmail.com
+antonio.jimzC@gmail.com
 
