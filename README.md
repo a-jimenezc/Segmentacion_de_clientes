@@ -1,8 +1,8 @@
-## Predicción de Enfermedad Cardiaca con Redes Neuronales
+## Segmentación de Clientes
 
 ### Objetivo
 
-El objetivo del presente análisis es desarrollar un modelo de red neuronal que permita predecir si un paciente presenta un cuadro de enfermedad de arterias coronarias.
+El objetivo del presente trabajo es segmentar a los clientes de un supermercado en un número reducido de grupos, esto a partir de información obtenida a través de las tarjetas de membresía.
 
 ### Prerequisitos
 
@@ -10,33 +10,31 @@ Las librerias necesarias están listadas en requirements.txt. También se incluy
 
 ### Datos
 
-Los datos seleccionados fueron descargados de Kaggle bajo el nombre "Heart Attack Analysis & Prediction Dataset" y fueron subidos por Rashik Rahman. A su vez, la base de datos orginial fue recolectada por: 
-1.	Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
-2.	University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
-3.	University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
-4.	V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D.
+El conjutno de datos proviene de Kaggle bajo el nombre de "Customer Clustering", el cual fue subido por Dev Sharma. Este cuenta con 2000 observaciones.
 
 Ver la carpeta de referencias para más información.
 
 ### Exploración Inicial de Datos
 
-El conjunto de datos se compone de variables numericas, ordinales y categoricas. La mayoria de los datos proviene de personas por encima de los 40 años y, además, en su mayoria varones.
+El conjunto de datos se compone de variables numericas, ordinales y categoricas. La mayoria de los clientes se encuentra entre los 20 y 60 años y tienen ingresos medio-altos.
 
-<img src="referencias/images/age.png" alt="Alt text 1" width="300"/> <img src="referencias/images/gender.png" alt="Alt text 2" width="300"/>
+<img src="referencias/images/age.png" alt="Alt text 1" width="300"/>
 
-Se puede observar que existe correlación entre ciertas variables numéricas, lo cual sugiere que el modelo se puede beneficiar del uso de regularizacion. 
+También, se puede observar que existe correlación entre ciertas variables numéricas. 
 
 <img src="referencias/images/corr.png" alt="Alt text 1" width="400"/>
 
-Se puede observar que la variable objetivo esta relativamente balanceada. Esto simplifica el desarrollo del modelo.
-
-<img src="referencias/images/output.png" alt="Alt text 1" width="400"/>
-
 ### Construcción del modelo
+Tres algoritmos de agrupamiento distintos fueron implementados: K-means, HDBSCAN y Gaussian Mixture Model. En cada caso,  se determinaron los mejores hiper-parámetros. Se utilizó la biblioteca Scikit-learn para K-means y GMM, mientras que para el algoritmo HDBSCAN se utilizó la implementación provista por la biblioteca hdbscan.
 
-Se probaron tres arquitecturas diferentes de algoritmo Perceptron, con una, dos y tres capas ocultas. En cada caso se utilizó Grid Search con Crossvalidation para la selección de los hiperparametros. Los modelos se construyeron utilizando la libreria Keras. Además, se usó la implementacion de la libreria Scikit-earn para Grid Search.
+Se utilizaron varias técnicas para la selección de los hiperparámetros para cada algoritmo.
 
-La métrica usada como referencia es "Accuracy". Esta nos da una medida general del desempeño del modelo cuando se tiene una variable objetivo balanceada.
+- Para K-means se utilizó una combinación entre el método del codo (elbow curve) que usa la métrica inercia, y la métrica de la silueta.
+
+<img src="referencias/images/elbow.png" alt="Alt text 1" width="300"/> <img src="referencias/images/silhouette.png" alt="Alt text 2" width="300"/>
+
+- Para HDBSCAN se utilizó la métrica de la silueta.
+- Para GMM se utilizó la métrica BIC (Bayesian Information Criterion) junto con la métrica score para escoger los valor más óptimos.
 
 ### Selección del modelo
 
