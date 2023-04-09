@@ -18,11 +18,11 @@ Ver la carpeta de referencias para más información.
 
 El conjunto de datos se compone de variables numericas, ordinales y categoricas. La mayoria de los clientes se encuentra entre los 20 y 60 años y tienen ingresos medio-altos.
 
-<img src="referencias/images/age.png" alt="Alt text 1" width="300"/>
+<img src="referencias/images/age.png" alt="Alt text 1" width="500"/>
 
 También, se puede observar que existe correlación entre ciertas variables numéricas. 
 
-<img src="referencias/images/corr.png" alt="Alt text 1" width="400"/>
+<img src="referencias/images/corr.png" alt="Alt text 1" width="500"/>
 
 ### Construcción del modelo
 Tres algoritmos de agrupamiento distintos fueron implementados: K-means, HDBSCAN y Gaussian Mixture Model. En cada caso,  se determinaron los mejores hiper-parámetros. Se utilizó la biblioteca Scikit-learn para K-means y GMM, mientras que para el algoritmo HDBSCAN se utilizó la implementación provista por la biblioteca hdbscan.
@@ -36,23 +36,24 @@ Se utilizaron varias técnicas para la selección de los hiperparámetros para c
 - Para HDBSCAN se utilizó la métrica de la silueta.
 - Para GMM se utilizó la métrica BIC (Bayesian Information Criterion) junto con la métrica score para escoger los valor más óptimos.
 
+<img src="referencias/images/bic.png" alt="Alt text 1" width="300"/>
+
 ### Selección del modelo
 
 A continuación se ilustra los resultados de cada uno de los modelos.
 
-<img src="referencias/images/scores1.png" alt="Alt text 1" width="400"/>
+<img src="referencias/images/comparison.png" alt="Alt text 1" width="400"/>
 
-Se observa que el modelo con una capa oculta es el que mejor se desempeña en el test set bajo la métrica "Accuracy". Este modelo tiene la función tanh como función de activación en la capa oculta y consta de 35 neuronas en la misma. 
+De la anterior gráfica, se escoje el algoritmo K-mean con K=4, cuatro grupos. Su desempeño es bueno y tiene un "reducido" número de grupos. 
 
-### Explicabilidad del Modelo
 
-Se desea conocer la importancia de cada una de las variables en el momento de hacer la predicción por parte del modelo. Para ello se usa la técnica de permutación. Esta consiste en permutar los valores de las filas de cada columna, una columna a la vez, y calcular como el desempeño es afectado por esta permutación. Aquellas columnas (esto es, las variables) cuya permutación cause la mayor caída en el desepeño serán las mas importantes para el modelo.
+### Resultados del Modelo
 
-A continuación se detallan los resultados de permutación para el trainin-set y test-set.
+Se realiza una inspección visual de los resultados de este algoritmo.
 
-<img src="referencias/images/importances_train.png" alt="Alt text 1" width="300"/> <img src="referencias/images/imprtances_test.png" alt="Alt text 2" width="300"/>
+<img src="referencias/images/result3.png" alt="Alt text 1" width="300"/> 
 
-En ambos casos, caa (número de vasos principales) es una varible muy importante. También se puede ver que oldpeak (depresión de ST inducida por ejercicio en relación con el reposo) es una variable muy importante cuando se usa el training set, pero no con el test set. Esto puede ser una señal de que esta varible esta causando overfitting. Finalmente, cp_0 (tipo de dolor de pecho. Valor 0: angina típica) es muy importante en el test set, pero no así cuando se usa en training set. Esto sugiere que el modelo puede no estar capturando parte de la complejidad en los datos.
+<img src="referencias/images/result1.png" alt="Alt text 1" width="300"/> <img src="referencias/images/result2.png" alt="Alt text 2" width="300"/>
 
 
 ### Conclusiones
