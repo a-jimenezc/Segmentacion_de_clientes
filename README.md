@@ -49,7 +49,7 @@ De la anterior gráfica, se escoje el algoritmo K-mean con K=4, cuatro grupos. S
 
 ### Resultados del Modelo
 
-Se realiza una inspección visual de los resultados de este algoritmo.
+Se realiza una inspección visual de los resultados de este algoritmo, tomando variables de a dos y de a tres. Con esto se puede tener cierta intuición de como los datos están siendo agrupados.
 
 
 <img src="referencias/images/result3.png" alt="Alt text 1" width="600"/> 
@@ -60,10 +60,9 @@ Se realiza una inspección visual de los resultados de este algoritmo.
 
 ### Conclusiones
 
-El modelo que mejor se desempeña con la métrica escogida es el de arquitectura más simple. Sin embargo, todavía es posible mejorar este modelo buscando hiperparámetros más óptimos realizando una busqueda exaustiva con "Grid Search".
+K-means es el modelo que mejor se desempeña con estos datos y con el requerimiento de tener un número "pequeño" de grupos. Sin embargo, todavía es posible mejorar este modelo buscando de forma exhaustiva hiperparámetros más óptimos.
 
 ### Contacto
-
 
 jimenezc.bo@gmail.com  
 
