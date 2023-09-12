@@ -20,11 +20,11 @@ Refer to the references folder for more information.
 
 The dataset consists of numerical, ordinal, and categorical variables. Most of the customers are between 20 and 60 years old and have medium to high incomes.
 
-<img src="references/images/age.png" alt="Image 1" width="500"/>
+<img src="referencias/images/age.png" alt="Image 1" width="500"/>
 
 Additionally, there is correlation between certain numerical variables.
 
-<img src="references/images/corr.png" alt="Image 1" width="300"/>
+<img src="referencias/images/corr.png" alt="Image 1" width="300"/>
 
 ### Model Building
 
@@ -34,18 +34,18 @@ Various techniques were used for hyperparameter selection for each algorithm.
 
 - For K-means, a combination of the elbow method using the inertia metric and the silhouette metric was used.
 
-<img src="references/images/elbow.png" alt="Image 1" width="300"/> <img src="references/images/silhouette.png" alt="Image 2" width="300"/>
+<img src="referencias/images/elbow.png" alt="Image 1" width="300"/> <img src="references/images/silhouette.png" alt="Image 2" width="300"/>
 
 - For HDBSCAN, the silhouette metric was used.
 - For GMM, the BIC (Bayesian Information Criterion) metric, along with the score metric, was used to choose the most optimal values.
 
-<img src="references/images/bic.png" alt="Image 1" width="300"/>
+<img src="referencias/images/bic.png" alt="Image 1" width="300"/>
 
 ### Model Selection
 
 Below are the results of each of the models.
 
-<img src="references/images/comparison.png" alt="Image 1" width="400"/>
+<img src="referencias/images/comparison.png" alt="Image 1" width="400"/>
 
 From the above graph, the K-means algorithm with K=4, four groups, is chosen. Its performance is good, and it has a "reduced" number of groups.
 
@@ -53,9 +53,9 @@ From the above graph, the K-means algorithm with K=4, four groups, is chosen. It
 
 A visual inspection of the results of this algorithm is conducted, considering variables in pairs and in triples. This provides some insight into how the data is being grouped.
 
-<img src="references/images/result3.png" alt="Image 1" width="600"/>
+<img src="referencias/images/result3.png" alt="Image 1" width="600"/>
 
-<img src="references/images/result1.png" alt="Image 1" width="300"/> <img src="references/images/result2.png" alt="Image 2" width="300"/>
+<img src="referencias/images/result1.png" alt="Image 1" width="300"/> <img src="referencias/images/result2.png" alt="Image 2" width="300"/>
 
 ### Conclusions
 
