@@ -1,68 +1,66 @@
-## Segmentación de Clientes
+## Customer Segmentation
 
-### Objetivo
+English | [Español](README_es.md)
 
-El objetivo del presente trabajo es segmentar a los clientes de un supermercado en un número reducido de grupos, esto a partir de información obtenida a través de las tarjetas de membresía.
+### Objective
 
-### Prerequisitos
+The objective of this work is to segment supermarket customers into a reduced number of groups based on information obtained through membership cards.
 
-Las librerias necesarias están listadas en requirements.txt. También se incluye environment.yml para los usuarios de Anaconda.
+### Prerequisites
 
-### Datos
+The necessary libraries are listed in requirements.txt. An environment.yml file is also included for Anaconda users.
 
-El conjutno de datos proviene de Kaggle bajo el nombre de "Customer Clustering", el cual fue subido por Dev Sharma. Este cuenta con 2000 observaciones.
+### Data
 
-Ver la carpeta de referencias para más información.
+The dataset comes from Kaggle under the name "Customer Clustering," uploaded by Dev Sharma. It consists of 2000 observations.
 
-### Exploración Inicial de Datos
+Refer to the references folder for more information.
 
-El conjunto de datos se compone de variables numericas, ordinales y categoricas. La mayoria de los clientes se encuentra entre los 20 y 60 años y tienen ingresos medio-altos.
+### Initial Data Exploration
 
-<img src="referencias/images/age.png" alt="Alt text 1" width="500"/>
+The dataset consists of numerical, ordinal, and categorical variables. Most of the customers are between 20 and 60 years old and have medium to high incomes.
 
-También, se puede observar que existe correlación entre ciertas variables numéricas. 
+<img src="references/images/age.png" alt="Image 1" width="500"/>
 
-<img src="referencias/images/corr.png" alt="Alt text 1" width="300"/>
+Additionally, there is correlation between certain numerical variables.
 
-### Construcción del modelo
-Tres algoritmos de agrupamiento distintos fueron implementados: K-means, HDBSCAN y Gaussian Mixture Model. En cada caso,  se determinaron los mejores hiper-parámetros. Se utilizó la biblioteca Scikit-learn para K-means y GMM, mientras que para el algoritmo HDBSCAN se utilizó la implementación provista por la biblioteca hdbscan.
+<img src="references/images/corr.png" alt="Image 1" width="300"/>
 
-Se utilizaron varias técnicas para la selección de los hiperparámetros para cada algoritmo.
+### Model Building
 
-- Para K-means se utilizó una combinación entre el método del codo (elbow curve) que usa la métrica inercia, y la métrica de la silueta.
+Three different clustering algorithms were implemented: K-means, HDBSCAN, and Gaussian Mixture Model (GMM). In each case, the best hyperparameters were determined. The Scikit-learn library was used for K-means and GMM, while the HDBSCAN algorithm was implemented using the hdbscan library.
 
-<img src="referencias/images/elbow.png" alt="Alt text 1" width="300"/> <img src="referencias/images/silhouette.png" alt="Alt text 2" width="300"/>
+Various techniques were used for hyperparameter selection for each algorithm.
 
-- Para HDBSCAN se utilizó la métrica de la silueta.
-- Para GMM se utilizó la métrica BIC (Bayesian Information Criterion) junto con la métrica score para escoger los valor más óptimos.
+- For K-means, a combination of the elbow method using the inertia metric and the silhouette metric was used.
 
-<img src="referencias/images/bic.png" alt="Alt text 1" width="300"/>
+<img src="references/images/elbow.png" alt="Image 1" width="300"/> <img src="references/images/silhouette.png" alt="Image 2" width="300"/>
 
-### Selección del modelo
+- For HDBSCAN, the silhouette metric was used.
+- For GMM, the BIC (Bayesian Information Criterion) metric, along with the score metric, was used to choose the most optimal values.
 
-A continuación se ilustra los resultados de cada uno de los modelos.
+<img src="references/images/bic.png" alt="Image 1" width="300"/>
 
-<img src="referencias/images/comparison.png" alt="Alt text 1" width="400"/>
+### Model Selection
 
-De la anterior gráfica, se escoje el algoritmo K-mean con K=4, cuatro grupos. Su desempeño es bueno y tiene un "reducido" número de grupos. 
+Below are the results of each of the models.
 
+<img src="references/images/comparison.png" alt="Image 1" width="400"/>
 
-### Resultados del Modelo
+From the above graph, the K-means algorithm with K=4, four groups, is chosen. Its performance is good, and it has a "reduced" number of groups.
 
-Se realiza una inspección visual de los resultados de este algoritmo, tomando variables de a dos y de a tres. Con esto se puede tener cierta intuición de como los datos están siendo agrupados.
+### Model Results
 
+A visual inspection of the results of this algorithm is conducted, considering variables in pairs and in triples. This provides some insight into how the data is being grouped.
 
-<img src="referencias/images/result3.png" alt="Alt text 1" width="600"/> 
+<img src="references/images/result3.png" alt="Image 1" width="600"/>
 
-<img src="referencias/images/result1.png" alt="Alt text 1" width="300"/> <img src="referencias/images/result2.png" alt="Alt text 2" width="300"/>
-  
+<img src="references/images/result1.png" alt="Image 1" width="300"/> <img src="references/images/result2.png" alt="Image 2" width="300"/>
 
+### Conclusions
 
-### Conclusiones
+K-means is the model that performs best with this data and the requirement of having a "small" number of groups. However, it is still possible to improve this model by exhaustively searching for more optimal hyperparameters.
 
-K-means es el modelo que mejor se desempeña con estos datos y con el requerimiento de tener un número "pequeño" de grupos. Sin embargo, todavía es posible mejorar este modelo buscando de forma exhaustiva hiperparámetros más óptimos.
+### Contact
 
-### Contacto
-
-[Linkedin](https://www.linkedin.com/in/antonio-jimnzc/)
-
+[LinkedIn](https://www.linkedin.com/in/antonio-jimnzc/)
